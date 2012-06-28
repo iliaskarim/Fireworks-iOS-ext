@@ -11,9 +11,7 @@ git clone https://github.com/iliaskarim/iOS-fireworks-extensions.git ~/Library/A
 * [John Dunning's Fireworks Console](http://johndunning.com/fireworks/about/FWConsole)
 
 
-# License
-
-These scripts are licensed under the MIT License:
+# MIT License
 
 Copyright (c) 2012, Ilias Karim
 
