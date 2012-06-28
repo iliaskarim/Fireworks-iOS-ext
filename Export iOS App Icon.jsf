@@ -1,0 +1,58 @@
+
+var dom = fw.getDocumentDOM();
+
+var sizes = [
+    // icon dimensions
+    // https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html
+
+    //
+    [22, 29],       //
+    [44, 58],       //
+
+    // 
+    [29, 29],       //
+    [50, 50],       //
+    [57, 57],       //
+    [58, 58],       //
+    [64, 64],       //
+    [72, 72],       //
+    [100, 100],     //
+    [114, 114],     //
+    [128, 128],     //
+    [144, 144],     //
+    [320, 320],     //
+    [512, 512],     //
+    [640, 640],     //
+    [1024, 1024],
+];
+
+var maxSize = sizes[sizes.length - 1];
+
+if (dom.width != maxSize[0] || dom.height != maxSize[1]) 
+{   // Wrong dimensions
+    // TODO: check all pages for correct size
+    alert('Error: Master page must be 1024x1024px');
+}
+else 
+{
+    // delete all other pages
+    while (fw.getDocumentDOM().pagesCount > 1) {
+        fw.getDocumentDOM().deletePageAt(1);
+    }
+
+    for (var i = 0; i < sizes.length - 1; i++) {
+        // iterate over all required sizes
+        var width = sizes[i][0];
+        var height = sizes[i][1];
+
+        // duplicate, resize, rename
+        dom.duplicatePage(0);
+        dom.changeCurrentPage(1);
+        dom.setDocumentImageSize({left:0, top:0, right:width, bottom:height}, {pixelsPerUnit:72, units:'inch'}, true, -1);
+        dom.setPageName(1, 'icon-' + width + 'x' + height);
+    }
+
+    dom.changeCurrentPage(0);
+
+    fw.exportDocumentAs(null, null, null);
+}

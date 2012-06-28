@@ -1,0 +1,40 @@
+
+var dom = fw.getDocumentDOM();
+
+function exportRetina()
+{
+    // delete all other pages
+    while (fw.getDocumentDOM().pagesCount > 1) {
+        fw.getDocumentDOM().deletePageAt(1);
+    }
+
+    var width = dom.width;
+    var height = dom.height;
+
+    // duplicate, resize & rename
+    dom.duplicatePage(0);
+    dom.changeCurrentPage(1);
+    dom.setDocumentImageSize({left:0, top:0, right:width/2, bottom:height/2}, {pixelsPerUnit:72, units:'inch'}, true, -1);
+    dom.setPageName(1, dom.pageName.substring(0, dom.pageName.length - 3));
+
+    dom.changeCurrentPage(0);
+
+    fw.exportDocumentAs(null, null, null);
+}
+
+if (dom.pageName.substring(dom.pageName.length - 3) != "@2x") 
+{
+    // TODO: check all pages for name
+
+    if(confirm('Error: High-res page name must end in @2x\n\nAppend "@2x" to current page name?'))
+    {
+        // TODO: not hardcode page name here
+        dom.setPageName(0, dom.pageName + "@2x");
+
+        exportRetina();
+    }
+}
+else 
+{
+    exportRetina();
+}
