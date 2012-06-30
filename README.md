@@ -1,14 +1,21 @@
 # Installation
 
-To install for Fireworks CS6 on Mac OS X:
-`
-git clone https://github.com/iliaskarim/iOS-fireworks-extensions.git ~/Library/Application\ Support/Adobe/Fireworks\ CS6/Commands/iOS
-`
+To install for Fireworks CS6 on Mac OS X:  
+`git clone https://github.com/iliaskarim/iOS-fireworks-extensions.git ~/Library/Application\ Support/Adobe/Fireworks\ CS6/Commands/iOS`
+
+# Usage
+
+1. Select the "master" page (in the pages panel, usually grouped with the layers panel) which for the icon is 1024x1024 and run the script, or for retina graphics select the @2x version
+2. Run the appropriate script from Commands > iOS, which will delete all other pages, recreate and resize them, then open the export dialog for you
+3. Select "Export all pages"
+4. Export! The files will be named appropriately
+
 
 # Resources 
 
 * [Extending Fireworks CS5](http://help.adobe.com/en_US/fireworks/cs/extend/fireworks_cs5_extending.pdf)
 * [John Dunning's Fireworks Console](http://johndunning.com/fireworks/about/FWConsole)
+* [Custom Icon and Image Creation Guidelines](https://developer.apple.com/library/ios/#documentation/UserExperience/Conceptual/MobileHIG/IconsImages/IconsImages.html)
 
 
 # MIT License
