@@ -1,7 +1,7 @@
 # Installation
 
 To install for Adobe Fireworks CS6 on Mac OS X:  
-`git clone https://github.com/iliaskarim/iOS-fireworks-ext.git ~/Library/Application\ Support/Adobe/Fireworks\ CS6/Commands/iOS`
+`git clone https://github.com/iliaskarim/fireworks-iOS-ext.git ~/Library/Application\ Support/Adobe/Fireworks\ CS6/Commands/iOS`
 
 On other platforms or versions of Fireworks, clone or move these scripts into a new directory in Adobe Fireworks' commands directory. The name of the commands subdirectory that you create will be the name that appears in Fireworks' commands drop-down menu.
 
