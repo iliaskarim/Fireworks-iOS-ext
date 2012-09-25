@@ -1,5 +1,7 @@
 # TODO
 
+* Default.png sizing up to iPhone 5, iPad
+* variable iPad sizing?
 * Rename pages to file name
 * Set optimize settings to export all pages as PNG
 
